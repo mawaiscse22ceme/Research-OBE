@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ObeModel:OBERootNode
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ObeModel="http://www.example.org/ObeModel"
+    xsi:schemaLocation="http://www.example.org/ObeModel ObeModel.ecore">
+  <institutes
+      Name="UAJK"
+      associatedvision="//@visions.0"
+      associatedmission="//@missions.0"/>
+  <institutes
+      Name="Faculty"
+      InstituteLevel="Faculty"
+      parentInstitute="//@institutes.0"
+      associatedmission="//@missions.2"/>
+  <institutes
+      Name="Department"
+      InstituteLevel="Department"
+      Offerprograms="//@programs.0"
+      parentInstitute="//@institutes.1"
+      associatedmission="//@missions.1"/>
+  <visions VisionStatement="University Vision"/>
+  <missions
+      MissionStatement="University Mission"
+      institute="//@institutes.0"/>
+  <missions
+      MissionStatement="Department Mission"
+      institute="//@institutes.2"/>
+  <missions
+      MissionStatement="Faculty Mission"
+      institute="//@institutes.1"/>
+  <peos PEOStatement="PEO 1"
+      mission="//@missions.1"
+      plos="//@plos.0"/>
+  <peos PEOStatement="PEO 2"
+      mission="//@missions.1"
+      plos="//@plos.1"/>
+  <peos PEOStatement="PEO 3"
+      threshold="50"
+      mission="//@missions.1"
+      plos="//@plos.2"/>
+  <courses Name="Programming Fundamentals"
+      learningoutcomes="//@clos.0"
+      activities="//@activitties.0"/>
+  <batches Name="Session 19-23"
+      students="//@students.0 //@students.1 //@students.2"/>
+  <programs
+      name="Bsc Software Engineering"
+      programobjectives="//@peos.0 //@peos.1 //@peos.2"
+      programlearningoutcomes="//@plos.0 //@plos.1 //@plos.2"
+      associatedbatches="//@batches.0"
+      offeredcourses="//@courses.0"/>
+  <plos Title="PLO 1"
+      closMapping="//@clos.0"
+      peo="//@peos.0"/>
+  <plos Title="PLO 2"
+      peo="//@peos.1"/>
+  <plos Title="PLO 3"
+      peo="//@peos.2"/>
+  <students
+      RollNumber="10"
+      Name="Umer"
+      batche="//@batches.0"
+      registercourse="//@courses.0"/>
+  <students
+      RollNumber="2"
+      Name="Hammad"
+      batche="//@batches.0"
+      registercourse="//@courses.0"/>
+  <students
+      Name="Kainat"
+      batche="//@batches.0"
+      registercourse="//@courses.0"/>
+  <activitties
+      Name="Q1"
+      totalMarks="10"
+      clo="//@clos.0"/>
+  <clos Statement="CLO 1"
+      learninglevels="//@learninglevels.0"
+      activity="//@activitties.0"
+      maptoplo="//@plos.0"/>
+  <learninglevels
+      Level="C1"
+      clo="//@clos.0"/>
+</ObeModel:OBERootNode>
